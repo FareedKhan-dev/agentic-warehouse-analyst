@@ -1,0 +1,92 @@
+{
+  "created": "2026-10-21T20:16:17",
+  "run_tag": "sf100",
+  "scale_factor": 100,
+  "seed": 42,
+  "machine": {
+    "python": "3.12.14",
+    "os": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel(R) Core(TM) Ultra 7 255H",
+    "logical_cpus": 16,
+    "ram_gb": 31.4
+  },
+  "packages": {
+    "duckdb": "1.5.6",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "pyarrow": "26.0.0",
+    "httpx": "0.28.1",
+    "bm25s": "0.3.14",
+    "rapidfuzz": "3.14.6",
+    "sqlglot": "30.24.0",
+    "networkx": "3.7",
+    "psutil": "7.2.2",
+    "ipywidgets": "8.1.9",
+    "papermill": "2.7.0",
+    "jupytext": "1.19.6"
+  },
+  "warehouse": {
+    "file": "tpcds_sf100.duckdb",
+    "bytes": 28609622016,
+    "source": "https://blobs.duckdb.org/data/tpcds-sf100.db",
+    "tables": 24,
+    "rows": 959031513
+  },
+  "optimised_copy": {
+    "file": "tpcds_sf100_opt.duckdb",
+    "bytes": 33338961920,
+    "rollups": [
+      "rollup_item_day",
+      "rollup_store_day",
+      "rollup_demo_day",
+      "rollup_custstate_day",
+      "rollup_returns_day"
+    ]
+  },
+  "duckdb": {
+    "threads": 16,
+    "memory_limit": "18GB",
+    "spill_limit": "120GB",
+    "agent_timeout_s": 30,
+    "agent_max_rows": 10000,
+    "guard_max_estimated_rows": 370000000000.0
+  },
+  "models": {
+    "Qwen3.8-27B": 0.2,
+    "Qwen3.8-Flash-Next": 0.2,
+    "Qwen3.7-Plus": 0.2,
+    "Qwen3.8-Max": 0.5,
+    "Qwen3.7-Max": 0.5,
+    "Qwen3.8-Omni-Flash": null
+  },
+  "final_system": {
+    "intake": true,
+    "glossary": true,
+    "values": false,
+    "scout": false,
+    "fewshot": 3,
+    "repair": 2,
+    "double_entry": true,
+    "critic": true,
+    "writer": "Qwen-Ambassador/Qwen3.7-Plus",
+    "second_writer": "",
+    "budget_s": 0.0,
+    "revision": "r12",
+    "tau": null,
+    "speculative": true,
+    "warehouse": "optimised"
+  },
+  "questions": {
+    "dev": 102,
+    "test": 194,
+    "pool": 39
+  },
+  "targets": {
+    "everyday_accuracy_min": 0.9,
+    "false_success_max": 0.05,
+    "latency_p50_max_s": 5.0,
+    "latency_p95_max_s": 15.0
+  },
+  "lowest_free_memory_gb_per_evaluation": {}
+}

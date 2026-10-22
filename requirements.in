@@ -1,0 +1,19 @@
+# direct dependencies; the exact resolved versions are frozen into requirements.txt
+duckdb==1.5.6
+pandas
+pyarrow
+numpy
+matplotlib
+ipywidgets
+ipykernel
+jupyterlab
+papermill
+jupytext
+httpx
+bm25s
+rapidfuzz
+sqlglot
+networkx
+psutil
+pyyaml
+pytz
